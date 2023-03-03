@@ -9,7 +9,7 @@
   "authentication": {
     "entity": "user",
     "service": "users",
-    "secret": "3Z0JnPq/yLJr49BIwPiKoLP/gAo=",
+    "secret": "AUTHENTICATION_SECRET",
     "authStrategies": [
       "jwt",
       "local"
@@ -28,7 +28,7 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/todo-sphere",
+  "mongodb": "MONGODB_URI",
   "adminUser": {
     "email": "admin@todoshpere.com",
     "password": "SecureAdmin",

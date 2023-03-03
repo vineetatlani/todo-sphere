@@ -1,3 +1,4 @@
+require('dotenv').config();
 import path from 'path';
 import favicon from 'serve-favicon';
 import compress from 'compression';
@@ -7,7 +8,6 @@ import cors from 'cors';
 import feathers from '@feathersjs/feathers';
 import configuration from '@feathersjs/configuration';
 import express from '@feathersjs/express';
-
 
 
 import { Application } from './declarations';
