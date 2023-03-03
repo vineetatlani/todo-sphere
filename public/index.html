@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Social Media App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #3f51b5;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: 36px;
+        font-weight: normal;
+      }
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      li span {
+        display: inline-block;
+        width: 200px;
+        font-weight: bold;
+      }
+      footer {
+        background-color: #eeeeee;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Social Media App</h1>
+    </header>
+    <main>
+      <p>My Social Media App is a platform for users to manage their to-do lists and create posts with comments. Our APIs are easy to use and allow developers to build custom applications that integrate with our platform.</p>
+      <ul>
+        <li><span>User Sign Up:</span> /user</li>
+        <li><span>User Log In:</span> /login</li>
+        <li><span>Create Todo:</span> /todo</li>
+        <li><span>Get Todo:</span> /todo/:id</li>
+        <li><span>Edit Todo:</span> /todo/:id</li>
+        <li><span>Delete Todo:</span> /todo/:id</li>
+        <li><span>Create Post:</span> /post</li>
+        <li><span>Get Post:</span> /post/:id</li>
+        <li><span>Add Comment:</span> /post/:id/comment</li>
+        <li><span>Get User:</span> /user/:id</li>
+      </ul>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Social Media App. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

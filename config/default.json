@@ -1,0 +1,42 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "3Z0JnPq/yLJr49BIwPiKoLP/gAo=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/todo-sphere",
+  "adminUser": {
+    "email": "admin@todoshpere.com",
+    "password": "SecureAdmin",
+    "firstName": "Admin",
+    "lastName": ""  
+  },
+  "apiLimiter": {
+    "windowMs": 10000,
+    "max": 5
+  }
+}
