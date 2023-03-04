@@ -1,7 +1,7 @@
 import logger from './logger';
 import app from './app';
 
-const port = process.env.PORT || app.get('port');
+const port = app.get('port') || 5000;
 const server = app.listen(port);
 
 process.on('unhandledRejection', (reason, p) =>

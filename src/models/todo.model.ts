@@ -12,7 +12,7 @@ export default function (app: Application): Model<any> {
   const schema = new Schema({
     title: { type: String, required: true, },
     completed: { type: Schema.Types.Boolean, default: false },
-    createdBy: { type: Schema.Types.ObjectId, required: true },
+    createdBy: { type: Schema.Types.String, required: true },
     description: { type: Schema.Types.String }
   }, {
     timestamps: true

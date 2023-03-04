@@ -9,7 +9,7 @@ export default (options = {}): Hook => {
   return async (context: HookContext): Promise<HookContext> => {
     const todo = await app.services.todo._get(context.id as string);
 
-    if (!context.params.user?._id.equals(todo.createdBy)) {
+    if (!context.params.user?._id.toString() === todo.createdBy) {
       throw new Forbidden("Access Not Allowed");
     }
     return context;

@@ -11,7 +11,7 @@ export default function (app: Application): Model<any> {
   const { Schema } = mongooseClient;
   const schema = new Schema({
     text: { type: String, required: true },
-    postId: { type: Schema.Types.ObjectId, required: true },
+    postId: { type: Schema.Types.String, required: true },
     createdBy: { type: Schema.Types.String, required: true }
   }, {
     timestamps: true

@@ -10,7 +10,7 @@ export default (options = {}): Hook => {
     const post = await app.services.post._get(context.id as string);
 
     context.params.post = post;
-    if (!context.params.user?._id.equals(post.createdBy)) {
+    if (!context.params.user?._id.toString() === post.createdBy) {
       throw new Forbidden("Access Not Allowed");
     }
     return context;

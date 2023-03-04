@@ -3,6 +3,7 @@
 
 import { MethodNotAllowed } from "@feathersjs/errors";
 import throwError from "./hooks/throw-error";
+import logError from "./hooks/log-error";
 
 export default {
   before: {
@@ -26,7 +27,7 @@ export default {
   },
 
   error: {
-    all: [],
+    all: [logError()],
     find: [],
     get: [],
     create: [],

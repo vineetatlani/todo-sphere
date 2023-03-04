@@ -20,6 +20,7 @@ import authentication from './authentication';
 import mongoose from './mongoose';
 import setUpAdminUser from './set-up-admin-user';
 import { rateLimit } from "express-rate-limit";
+import { configureCacheManager } from './helpers/cache-manager';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const app: Application = express(feathers());
@@ -45,13 +46,16 @@ if (limiter) {
   app.use(rateLimit(limiter))
 }
 
+// Configure Cache Manager
+app.configure(configureCacheManager);
+
 // Host the public folder
 app.use('/', express.static(app.get('public')));
 
 // Set up Plugins and providers
 app.configure(express.rest());
 
-
+// Configure Mongoose
 app.configure(mongoose);
 
 
@@ -71,3 +75,4 @@ app.use(express.errorHandler({ logger } as any));
 app.hooks(appHooks);
 
 export default app;
+
