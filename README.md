@@ -23,7 +23,8 @@ _Note_: A default admin user is automatically added when the server is started. 
 **Rate-Limiting:** Rate-limiting has been implemented to prevent abuse of the APIs.
 
 **Postman Collection:** A Postman collection is included in the GitHub repository for easy API testing.
-<a href="postman_collection.json" download>Click to Download Postman Json File</a>
+<a href="postman_collection.json" download>Click to View Postman Json File</a>
+
 _Note_: To use the postman collection, modify the variables to add BASE_URL, ACCESS_TOKEN and USER_ID
 
 ## **Technologies Used**
