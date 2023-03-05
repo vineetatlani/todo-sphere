@@ -29,6 +29,7 @@ _Note_: To use the postman collection, modify the variables to add BASE_URL, ACC
 ## **Technologies Used**
 
 *   Node.js
+*   FeathersJs
 *   Express.js
 *   MongoDB
 *   Mongoose
