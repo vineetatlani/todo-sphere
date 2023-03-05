@@ -13,10 +13,10 @@ import deleteUsersGetCache from "../../hooks/delete-users-get-cache";
 const { authenticate } = feathersAuthentication.hooks;
 const { hashPassword, protect } = local.hooks;
 
-const isCurrentUser = (context: any) => {
-  return context.params.user?._id.toString() === context.id;
-}
-export const isAdmin = (context: any) =>
+const isCurrentUser = (context: any) => 
+  context.params.user?._id.toString() === context.id;
+
+export const isAdmin = (context: any) => 
   context.params.user && context.params.user.role === UserRoles.ADMIN;
 
 export default {
@@ -48,7 +48,7 @@ export default {
     all: [
       // Make sure the password field is never sent to the client
       // Always must be the last hook
-      protect("password"),
+      protect("password"), iff(isNot(isAdmin), protect('role'))
     ],
     find: [],
     get: [setCache()],
