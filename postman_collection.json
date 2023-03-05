@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "9add24ad-93e9-4c31-a18d-2dd56a62776c",
+		"name": "Todo-Sphere",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14048799"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test2@gmail.com\",\n    \"password\": \"test\",\n    \"firstName\": \"Vineet\",\n    \"lastName\": \"Atlani\",\n    \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strategy\": \"local\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Multiple Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users?firstName=Vineet",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Vineet"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{USER_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{USER_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User Details",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Vineet\",\n    \"lastName\": \"Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:userId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64041dbc93e5be87460ed3ac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strategy\": \"jwt\",\n    \"accessToken\": \"{{ACCESS_TOKEN}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"This is my comment\",\n    \"postId\": \"64042019fcb1eb5a451d0cbd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comment",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comments by postId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/comment?postId=64042019fcb1eb5a451d0cbd",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comment"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "64042019fcb1eb5a451d0cbd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/comment/:commentId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comment",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "Create Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Work on TodoSphere\",\n    \"description\": \"Create app based on CutShort Requirements\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/todo",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Todo By userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/todo?createdBy=64041dbc93e5be87460ed3ac",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "createdBy",
+									"value": "64041dbc93e5be87460ed3ac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Todo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Edited todo Title\",\n    \"completed\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/todo/:todId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"todo",
+								":todId"
+							],
+							"variable": [
+								{
+									"key": "todId",
+									"value": "64041e627304384463744405"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/todo/:todId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"todo",
+								":todId"
+							],
+							"variable": [
+								{
+									"key": "todId",
+									"value": "64041e627304384463744405"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"TodoSphere\",\n    \"text\": \"Social Media App for sharing organizing todos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/post",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/todo?createdBy=64041dbc93e5be87460ed3ac",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "createdBy",
+									"value": "64041dbc93e5be87460ed3ac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"This title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/post/6401c1e1d2ae565be005f6f3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"post",
+								"6401c1e1d2ae565be005f6f3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/post/6402d162c8c875b756c679dc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"post",
+								"6402d162c8c875b756c679dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/post/6402d162c8c875b756c679dc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"post",
+								"6402d162c8c875b756c679dc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{ACCESS_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ACCESS_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2Nzc5OTM3MzUsImV4cCI6MTY3ODA4MDEzNSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjQwMzU1YTU0MTdiY2Q3ODU1YWM1OGY0IiwianRpIjoiMGIzZGYxNzMtMjNiNS00NzgyLWE4ZDQtNTM5MmVjNDY3OTdlIn0.bEwuKlIh1k7MNhTf4x9ne6NQT1uMjW45LSzYDYMtbOs",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "USER_ID",
+			"value": "6401c7a1277494e81b981423",
+			"type": "string"
+		}
+	]
+}

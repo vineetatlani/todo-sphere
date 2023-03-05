@@ -8,6 +8,8 @@ Todoshpere is a social media app that allows users to create todos and posts, an
 
 **User Management:** Users can be managed by sending HTTP requests to create, read, update, and delete user data. Admin can also edit other user details.
 
+_Note_: A default admin user is automatically added when the server is started. The email and password of the default admin user can be modified through the configuration file **default.json**. An admin user can edit other user details, and only an admin can see or update the roles of a user. 
+
 **Todo Management:** Todos can be managed by sending HTTP requests to create, read, update, and delete todo data.
 
 **Post Management:** Posts can be managed by sending HTTP requests to create, read, update, and delete post data.
@@ -21,6 +23,7 @@ Todoshpere is a social media app that allows users to create todos and posts, an
 **Rate-Limiting:** Rate-limiting has been implemented to prevent abuse of the APIs.
 
 **Postman Collection:** A Postman collection is included in the GitHub repository for easy API testing.
+_Note_: To use the postman collection, modify the variables to add BASE_URL, ACCESS_TOKEN and USER_ID
 
 ## **Technologies Used**
 
