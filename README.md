@@ -58,7 +58,9 @@ Authentication is required to access the all API endpoints exception creating us
 
 ## **Login API**
 
-Authentication can be done using the **/login** endpoint. A POST request is sent to the endpoint with a JSON body containing **email** and **password**. The API returns a JSON web token that can be used to authenticate requests to the other APIs.
+Authentication can be done using the **/login** endpoint. A POST request is sent to the endpoint with a JSON body containing **strategy**, **email** and **password**. For authentication with email and password, strategy should be set as "local"
+
+**Refresh Token**: to refresh token, call the api with JSON body containing **strategy** with value "jwt" and **accessToken**, with access token as its value obtained using above described method.
 
 ## **User API**
 
