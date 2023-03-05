@@ -53,7 +53,7 @@ This documentation outlines the API endpoints available for managing users on To
 
 ### **Base URL**
 
-**http://localhost:3030/users**
+**http://todosphere.ap-south-1.elasticbeanstalk.com**
 
 ## **Authentication**
 
