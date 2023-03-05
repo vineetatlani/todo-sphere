@@ -1,10 +1,36 @@
-## **TodoSphere Backend Repository**
+## **Project Introduction**
 
-TodoSphere is a social media app where you can create todos, posts and users can comment on posts and view each others todos. This repository contains the backend code for TodoSphere app.
+Todoshpere is a social media app that allows users to create todos and posts, and comment on posts. This project includes APIs for authentication, user management, todo management, post management, and comment management.
 
-## **Tech Stack**
+## **Features**
 
-The backend of TodoSphere app is built using Node.js and the Feathers.js framework. MongoDB is used as the database.
+**Authentication:** Users can authenticate by sending a POST request with an email and password in the request body. Passwords are stored in the database with encrypted values. JWT authentication is used for user authorization, and tokens can be refreshed by the login API.
+
+**User Management:** Users can be managed by sending HTTP requests to create, read, update, and delete user data. Admin can also edit other user details.
+
+**Todo Management:** Todos can be managed by sending HTTP requests to create, read, update, and delete todo data.
+
+**Post Management:** Posts can be managed by sending HTTP requests to create, read, update, and delete post data.
+
+**Comment Management:** Comments can be managed by sending HTTP requests to create, read, update, and delete comment data.
+
+**Caching:** Caching has been implemented for the users and posts GET APIs using the npm package memory-cache. However, caching could also have been done through Redis, which would improve performance and scalability.
+
+**Mongodb Indexing:** Indexing has been done on different fields in MongoDB to improve query performance.
+
+**Rate-Limiting:** Rate-limiting has been implemented to prevent abuse of the APIs.
+
+**Postman Collection:** A Postman collection is included in the GitHub repository for easy API testing.
+
+## **Technologies Used**
+
+*   Node.js
+*   Express.js
+*   MongoDB
+*   Mongoose
+*   bcrypt
+*   jsonwebtoken
+*   memory-cache
 
 ## **Setup**
 
@@ -12,8 +38,7 @@ To set up the project, follow these steps:
 
 1.  Clone the repository to your local machine.
 2.  Install the dependencies by running **npm install**.
-3.  Set up your MongoDB URI in the **default.json** configuration file.
-4.  Set up your authentication secret in the **default.json** configuration file.
+3.  Create a .env file in the root folder based on .env_example, set up values of the variables based on example
 5.  Start the server by running **npm start**.
 
 ## **API Documentation**

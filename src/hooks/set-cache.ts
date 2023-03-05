@@ -10,7 +10,6 @@ export default (options = {}): Hook => {
     const cacheUsed = context.params.cacheUsed;
 
     if (!key || cacheUsed) {
-      console.log(key, cacheUsed);
       return context;
     }
     
